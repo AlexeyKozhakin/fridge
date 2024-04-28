@@ -8,6 +8,7 @@ def add(items, title, amount, expiration_date=None):
     if title in items.keys():
         items[title].append({'amount': Decimal(amount), 'expiration_date': date_obj})
 
+
 def add_by_note(items, note):
     info=note.split(' ')
     date=info[-1]
@@ -37,10 +38,12 @@ def find(items,needle):
             names.append(item)
     return names
 
-def amount(items, needle):
-    pass
 
+def amount(items, needle):
+    count=0
+    for item in items[needle.capitalize()]:
+        count+=item['amount']
+    return count
 
 def expire(items, in_advance_days=0):
     pass
-
