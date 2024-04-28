@@ -24,7 +24,7 @@ def add_by_note(items, note):
         str_name+=f'{i} '
     am_ad={}
     am_ad['amount']= Decimal(f'{amount}')
-    am_ad['expiration_date']=datetime.datetime.strptime(date,'%Y-%m-%d')
+    am_ad['expiration_date']=datetime.datetime.strptime(date,'%Y-%m-%d').date()
 
     if str_name[:-1] in items.keys():
         items[str_name[:-1]].append(am_ad)
