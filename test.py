@@ -6,6 +6,11 @@ from fridge import *
 import datetime
 from decimal import Decimal
 
+print(add({}, 'Макароны', Decimal('1.5')))
+
+print({'Макароны': [{'amount': Decimal('1.5'), 'expiration_date': None}]})
+
+
 # Холодильник пуст:
 goods = {}
 
