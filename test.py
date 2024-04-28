@@ -2,6 +2,14 @@ import datetime
 from decimal import Decimal
 from fridge import *
 
+
+
+
+print(add({}, 'Яйца Фабрики №1', Decimal('4'), '2023-07-15'))
+
+print({'Яйца Фабрики №1': [{'amount': Decimal('4'),
+                      'expiration_date': datetime.date(2023, 7, 15)}]})
+
 goods = {
     'Яйца': [{'amount': Decimal('1'), 'expiration_date': None}],
     'Морковь': [

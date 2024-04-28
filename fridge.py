@@ -4,10 +4,12 @@ import datetime
 DATE_FORMAT = '%Y-%m-%d'
 
 def add(items, title, amount, expiration_date=None):
-    date_obj = datetime.datetime.strptime(expiration_date, '%Y-%m-%d')
+    date_obj = datetime.datetime.strptime(expiration_date, '%Y-%m-%d').date()
     if title in items.keys():
         items[title].append({'amount': Decimal(amount), 'expiration_date': date_obj})
-
+    else:
+        items[title]=[{'amount': Decimal(amount), 'expiration_date': date_obj}]
+    return items
 
 def add_by_note(items, note):
     info=note.split(' ')
