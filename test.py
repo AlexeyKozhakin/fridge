@@ -6,6 +6,20 @@ from fridge import *
 import datetime
 from decimal import Decimal
 
+#=========== Find ===============================
+goods = {
+    'Яйца': [{'amount': Decimal('1'), 'expiration_date': datetime.date(2023, 6, 24)}],
+    'Яйца гусиные': [{'amount': Decimal('4'), 'expiration_date': datetime.date(2023, 7, 15)}],
+    'Морковь': [{'amount': Decimal('2'), 'expiration_date': datetime.date(2023, 8, 6)}]
+}
+
+# Ищем продукты, в названии которых есть подстрока "йц". 
+# Регистр символов не должен влиять на поиск.
+print(find(goods, 'яйЦ'))
+print(['Яйца', 'Яйца гусиные'])
+#=========== Add by note ========================
+
+
 print(add_by_note({}, 'Яйца Фабрики №1 4 2023-07-15'))
 
 print({'Яйца Фабрики №1': [{'amount': Decimal('4'),

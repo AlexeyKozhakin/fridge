@@ -37,9 +37,11 @@ def add_by_note(items, note):
 
 def find(items,needle):
     names=[]
-    for item in items.keys():
-        if needle in item:
-            names.append(item)
+    ittems_key_list=list(items.keys())
+    lower_keys=list(map(lambda num: num.lower(),ittems_key_list))
+    for item in lower_keys:
+        if needle.lower() in item:
+            names.append(item.capitalize())
     return names
 
 
