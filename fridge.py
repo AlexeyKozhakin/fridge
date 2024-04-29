@@ -23,9 +23,9 @@ def add_by_note(items, note):
     for i in name:
         str_name+=f'{i} '
     if '-' in date:
-        return add(items, str_name, amount, date)
+        return add(items, str_name.strip(), amount, date)
     else:
-        return add(items, str_name, amount)
+        return add(items, str_name.strip(), amount)
 
 
 def find(items,needle):
