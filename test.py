@@ -11,7 +11,7 @@ print(add_by_note({}, 'Яйца Фабрики №1 4 2023-07-15'))
 print({'Яйца Фабрики №1': [{'amount': Decimal('4'),
                       'expiration_date': datetime.date(2023, 7, 15)}]})
 
-
+print(add_by_note({}, 'Макароны 1.5'))
 
 print(add({}, 'Макароны', Decimal('1.5')))
 

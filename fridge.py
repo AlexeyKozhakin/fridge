@@ -16,15 +16,22 @@ def add(items, title, amount, expiration_date=None):
 
 def add_by_note(items, note):
     info=note.split(' ')
-    date=info[-1]
-    amount=info[-2]
-    name=info[:-2]
-    str_name=''
-    for i in name:
-        str_name+=f'{i} '
-    if '-' in date:
+    
+    
+    if '-' in info[-1]:
+        date=info[-1]
+        amount=info[-2]
+        name=info[:-2]
+        str_name=''
+        for i in name:
+            str_name+=f'{i} '
         return add(items, str_name.strip(), amount, date)
     else:
+        amount=info[-1]
+        name=info[:-1]
+        str_name=''
+        for i in name:
+            str_name+=f'{i} '
         return add(items, str_name.strip(), amount)
 
 
