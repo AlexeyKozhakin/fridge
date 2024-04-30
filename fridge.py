@@ -45,10 +45,18 @@ def find(items,needle):
 
 
 def amount(items, needle):
-    count=0
-    for item in items[needle.capitalize()]:
-        count+=item['amount']
-    return count
+    keys=list(items.keys())
+    keys_low=[]
+    for i in keys:
+        keys_low.append(i.lower())
+    if needle.lower() in keys_low:
+        id=keys_low.index(needle.lower())
+        count=0
+        for item in items[keys[id]]:
+            count+=item['amount']
+        return count 
+    else:
+        return 0
 
 def expire(items, in_advance_days=0):
     product=[]
