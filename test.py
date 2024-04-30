@@ -7,6 +7,15 @@ import datetime
 from decimal import Decimal
 
 #=========== Find ===============================
+#===1
+goods = {
+    'Яйца': [{'amount': Decimal('1'), 'expiration_date': datetime.date(2023, 6, 24)}],
+    'Яйца Гусиные': [{'amount': Decimal('4'), 'expiration_date': datetime.date(2023, 7, 15)}],
+    'Морковь': [{'amount': Decimal('2'), 'expiration_date': datetime.date(2023, 8, 6)}]
+}
+print(find(goods, 'яйца гусиные'))
+print(['Яйца Гусиные'])
+#===2
 goods = {
     'Яйца': [{'amount': Decimal('1'), 'expiration_date': datetime.date(2023, 6, 24)}],
     'Яйца гусиные': [{'amount': Decimal('4'), 'expiration_date': datetime.date(2023, 7, 15)}],
@@ -15,7 +24,7 @@ goods = {
 
 # Ищем продукты, в названии которых есть подстрока "йц". 
 # Регистр символов не должен влиять на поиск.
-print(find(goods, 'яйЦ'))
+print(find(goods, 'яй'))
 print(['Яйца', 'Яйца гусиные'])
 #=========== Add by note ========================
 
