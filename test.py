@@ -13,11 +13,15 @@ goods = {
         {'amount': Decimal('2'), 'expiration_date': datetime.date(2023, 8, 1)},
         {'amount': Decimal('3'), 'expiration_date': datetime.date(2023, 8, 6)}
     ],
-    'вода': [{'amount': Decimal('2.5'), 'expiration_date': None}]
+    'вода': [{'amount': Decimal('2.5'), 'expiration_date': None}],
+    'Яйца': [{'amount': Decimal('1'), 'expiration_date': datetime.date(2023, 6, 24)}],
+    'Яйца Гусиные': [{'amount': Decimal('4'), 'expiration_date': datetime.date(2023, 7, 15)}],
+    'Морковь': [{'amount': Decimal('2'), 'expiration_date': datetime.date(2023, 8, 6)}]
 }
-
+print(type(amount(goods, 'Мороженное')))
 print(amount(goods, 'Мороженное'))
 print(0)
+print(type(amount(goods, 'яйца')))
 print(amount(goods, 'яйца'))
 print(1)
 print(amount(goods, 'МоРковь'))

@@ -49,11 +49,17 @@ def amount(items, needle):
     keys_low=[]
     for i in keys:
         keys_low.append(i.lower())
-    if needle.lower() in keys_low:
-        id=keys_low.index(needle.lower())
-        count=0
-        for item in items[keys[id]]:
-            count+=item['amount']
+    keys_ok=[]
+    for key in keys_low:
+        if needle.lower() in key:
+            keys_ok.append(key)
+
+    if len(key)!=0:
+        count=Decimal(0)
+        for key_ok in keys_ok:
+            id=keys_low.index(key_ok)
+            for item in items[keys[id]]:
+                count+=item['amount']
         return count 
     else:
         return Decimal(0)
