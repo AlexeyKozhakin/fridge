@@ -56,7 +56,7 @@ def amount(items, needle):
             count+=item['amount']
         return count 
     else:
-        return 0
+        return Decimal(0)
 
 def expire(items, in_advance_days=0):
     product=[]
