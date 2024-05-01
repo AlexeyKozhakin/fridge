@@ -6,6 +6,31 @@ from fridge import *
 import datetime
 from decimal import Decimal
 
+
+#=========== Expire =============================
+print('Expire')
+import datetime as dt
+from decimal import Decimal
+now=dt.date.today()
+date1=now + dt.timedelta(-1)
+date2=now + dt.timedelta(2)
+date3=now + dt.timedelta(1)
+goods = {
+    'Хлеб': [
+        {'amount': Decimal('1'), 'expiration_date': None},
+        {'amount': Decimal('1'), 'expiration_date': date1}
+    ],
+    'Яйца': [
+        {'amount': Decimal('2'), 'expiration_date': date2},
+        {'amount': Decimal('3'), 'expiration_date': date3}
+    ],
+    'Вода': [{'amount': Decimal('100'), 'expiration_date': None}]
+}
+
+print(expire(goods, in_advance_days=0))
+print(expire(goods, in_advance_days=1))
+print(expire(goods, in_advance_days=2))
+print('Amount')
 #=========== Amount =============================
 goods = {
     'Яйца': [{'amount': Decimal('1'), 'expiration_date': None}],
@@ -30,6 +55,7 @@ print(amount(goods, 'ВоДа'))
 print(2.5)
 print(amount(goods, 'Вода'))
 print(2.5)
+print('Find')
 #=========== Find ===============================
 #===1
 goods = {
@@ -50,6 +76,8 @@ goods = {
 # Регистр символов не должен влиять на поиск.
 print(find(goods, 'яй'))
 print(['Яйца', 'Яйца гусиные'])
+
+print('Add by note')
 #=========== Add by note ========================
 
 

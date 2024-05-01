@@ -70,9 +70,8 @@ def expire(items, in_advance_days=0):
     for item in items.keys():
         for it in items[item]:
             if str(it['expiration_date']) != 'None':
-
                 delta= it['expiration_date'] - datetime.datetime.now().date()
-                if delta.days<in_advance_days:
+                if delta.days<=in_advance_days:
                     if item in crutch.keys():
                         crutch[item]+= it['amount']
                     else: 
@@ -81,7 +80,7 @@ def expire(items, in_advance_days=0):
         good_list=[]
         good_list.append(item)
         good_list.append(crutch[item])
-        good=set(good_list)
+        good=tuple(good_list)
         product.append(good)
     return product
 
